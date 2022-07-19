@@ -15,7 +15,6 @@ class SessionsController {
       const user = await User.findOne({
         "emails.address": email.toLowerCase()
       }).select('+services.password.bcrypt');
-
       if (!user) {
         return res.status(401).json({
           error: true,

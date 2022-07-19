@@ -19,7 +19,7 @@ routes.use(authMiddleware);
 
 //################## AUTH PROOF #####################
 //Dashboard
-
+routes.get('/proof/dashboard', DashboardsController.ordersByUser);
 //################## AUTH PROOF #####################
 
 export default routes;
