@@ -16,6 +16,9 @@ class App {
   middlewares() {
     //tamanho configurado no express e no nginx
     this.server.use(express.json({limit: '100mb'}));
+    this.server.use(express.static('public'))
+    this.server.set('view engine', 'ejs');
+    this.server.set('views', './public/views');
   }
 
   routes() {

@@ -24,7 +24,6 @@ const extractOrdersInfo = (orders) => {
  const extractSalesInfo = (orders) => {
   const total = orders.reduce((prev, cur, i) => {
     const { payment: { status = '', amount = 0 } = {} } = cur;
-    console.log(`${i} - ${status} - ${amount}`)
     return status === successStatus ? prev + amount : prev;
   }, 0);
 

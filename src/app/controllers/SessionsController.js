@@ -11,7 +11,7 @@ class SessionsController {
         email,
         password
       } = req.body;
-
+      console.log(req.body)
       const user = await User.findOne({
         "emails.address": email.toLowerCase()
       }).select('+services.password.bcrypt');
@@ -52,6 +52,7 @@ class SessionsController {
       });
 
     } catch (error) {
+      console.log(error)
       return res.status(500).json({
         error: true,
         message: 'Ops! Ocorreu um erro em nosso servidor. Por favor, tente novamente ou contate o suporte.'

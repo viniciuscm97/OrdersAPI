@@ -8,6 +8,9 @@ import authMiddleware from './app/middlewares/auth';
 
 const routes = new Router();
 
+routes.get('/admin', (req,res) => {
+  res.render('admin');
+})
 //################## PROOF #####################
 //Session
 routes.post('/proof/session', SessionsController.store);
