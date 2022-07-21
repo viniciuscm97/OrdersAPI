@@ -12,7 +12,7 @@ class DashboardsController {
       const orders = await Order.find();
 
       if (!orders) {
-        res.sendStatus(500);
+        throw 'order not found';
       }
       const orderInfo = extractOrdersInfo(orders);
       const salesInfo = extractSalesInfo(orders);
